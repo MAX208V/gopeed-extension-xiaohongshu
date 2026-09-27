@@ -1,0 +1,41 @@
+{
+  "name": "gopeed-extension-xiaohongshu",
+  "author": "max",
+  "title": "小红书下载",
+  "description": "解析小红书笔记链接，下载图文原图和视频。",
+  "icon": "",
+  "version": "1.0.0",
+  "homepage": "",
+  "repository": {
+    "url": ""
+  },
+  "scripts": [
+    {
+      "event": "onResolve",
+      "match": {
+        "urls": [
+          "*://www.xiaohongshu.com/explore/*",
+          "*://www.xiaohongshu.com/discovery/item/*",
+          "*://xhslink.com/*"
+        ]
+      },
+      "entry": "index.js"
+    }
+  ],
+  "settings": [
+    {
+      "name": "cookie",
+      "title": "Cookie",
+      "description": "小红书登录 Cookie，从浏览器 DevTools 获取。不填也可用，但部分内容可能无法下载。",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "userAgent",
+      "title": "User-Agent",
+      "description": "自定义 User-Agent，留空使用默认值。",
+      "type": "string",
+      "value": ""
+    }
+  ]
+}
